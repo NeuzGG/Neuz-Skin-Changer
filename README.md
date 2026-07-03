@@ -1,11 +1,25 @@
-# NeuzSkinChanger 🎮
+# NeuzSkinChanger
 
-> **Dota 2 Skin Changer — Patch 7.02 (July 2026)**
+> **Dota 2 Skin Changer — Patch 7.41b (July 2026)**
 > A premium Electron desktop app for managing Dota 2 cosmetic skins via the VPK search path override method.
 
 [![Platform](https://img.shields.io/badge/platform-Windows-blue)]()
-[![Node](https://img.shields.io/badge/node-18%2B-green)]()
+[![Release](https://img.shields.io/badge/release-latest-brightgreen)]()
 [![License](https://img.shields.io/badge/license-MIT-lightgrey)]()
+
+## 📥 Download
+
+**[⬇ Download NeuzSkinChanger.exe (latest release)](../../releases/latest)**
+
+No build step, no Node.js required — just download, run, and go.
+
+| | |
+|---|---|
+| **OS** | Windows 10 / 11 (64-bit) |
+| **Size** | ~90 MB |
+| **Requires** | Dota 2 installed via Steam |
+
+> Windows SmartScreen may flag the `.exe` since it isn't code-signed. Click **More info → Run anyway**. This is expected for small independent tools and not a sign of malware — see [Disclaimer](#disclaimer).
 
 ---
 
@@ -40,44 +54,24 @@ This approach:
 
 ## Quick Start
 
-### First Time Setup
-1. Run **`Install.bat`** as Administrator
+1. [Download the latest release](../../releases/latest) and extract it anywhere (e.g. `Desktop\NeuzSkinChanger\`)
+
+2. Run **`Install.bat`** as Administrator (one-time setup)
    - Auto-detects your Dota 2 installation
    - Patches `gameinfo_branchspecific.gi`
    - Creates the `Dota2SkinChanger` folder
    - Repairs the matchmaking file signature so the client still passes launch checks
 
-2. Launch **`NeuzSkinChanger.exe`**
+3. Launch **`NeuzSkinChanger.exe`**
 
-3. Browse heroes → select a skin → click **Apply**
+4. Browse heroes → select a skin → click **Apply**
 
-4. If you have a `.vpk` file for the skin, click **VPK** to import it
+5. If you have a `.vpk` file for the skin, click **VPK** to import it
 
-5. Launch Dota 2 from the app
+6. Launch Dota 2 from the app
 
 ### License Activation
 NeuzSkinChanger uses a license key (`NEUZ-XXXX-XXXX-XXXX`) for access. Keys are issued and can be verified through our Discord — see the **Key Checker** in the app or on the landing page.
-
----
-
-## Development Setup
-
-### Prerequisites
-- Node.js 18+
-- npm 9+
-
-### Install & Run
-```bash
-npm install
-npm run dev
-```
-
-### Build for Production
-```bash
-npm run build
-```
-
-Output will be in the `out/` directory.
 
 ---
 
@@ -140,6 +134,20 @@ No — changes are rendered locally only. Everyone else still sees your actual e
 
 **Does it work after a Dota 2 update?**
 Client updates can reset `gameinfo_branchspecific.gi`. Re-run `Install.bat` if skins stop applying after a patch.
+
+---
+
+## Building from Source (Contributors)
+
+Most users just want the [download](#-download) above — this section is only for people who want to modify the code or build the `.exe` themselves.
+
+**Prerequisites:** Node.js 18+, npm 9+
+
+```bash
+npm install
+npm run dev      # run in development
+npm run build    # produce the packaged .exe in out/
+```
 
 ---
 
